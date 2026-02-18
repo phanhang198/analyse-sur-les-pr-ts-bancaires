@@ -49,4 +49,103 @@ Les prêts bancaires permettent aux particuliers et entreprises d’atteindre le
 * **Fidélisation** : Proposer refinancement ou produits complémentaires.
 
 ---
+Nous allons procéder l'analyse en fonction de ces 5 insights:
+📊 1️⃣ Analyse du risque (Risk Analytics)
+🔎 A. Taux de défaut par grade / sub_grade
+Colonnes utilisées :
+•	grade
+•	sub_grade
+•	loan_status
+Insight :
+•	Quel grade a le plus de Charged Off ?
+•	Les sub_grades les plus risqués ?
+👉 Permet d’identifier les profils à haut risque.
+Requête SQL
+<img width="861" height="202" alt="image" src="https://github.com/user-attachments/assets/5b85b27f-e39c-4d7b-81af-5beab2baf4dc" />
+Résultat
+<img width="821" height="244" alt="image" src="https://github.com/user-attachments/assets/07188ae1-a262-4430-b86a-2205088369eb" />
+
+
+
+________________________________________
+🔎 B. Défaut par DTI (Debt-to-Income)
+Colonnes :
+•	dti
+•	loan_status
+Insight :
+•	Plus le DTI est élevé → plus le risque augmente ?
+•	Déterminer un seuil critique (ex: DTI > 35%)
+________________________________________
+🔎 C. Défaut par revenu annuel
+Colonnes :
+•	annual_income
+•	loan_status
+Insight :
+•	Les revenus faibles ont-ils un taux de défaut plus élevé ?
+________________________________________
+💰 2️⃣ Performance financière
+🔎 A. Rentabilité par grade
+Colonnes :
+•	int_rate
+•	loan_amount
+•	total_payment
+•	loan_status
+Insight :
+•	Les prêts à taux élevé compensent-ils le risque ?
+•	Quel grade génère le plus de profit ?
+________________________________________
+🔎 B. Montant total prêté par État
+Colonnes :
+•	address_state
+•	loan_amount
+Insight :
+•	États avec plus forte activité
+•	Concentration géographique du portefeuille
+________________________________________
+🏠 3️⃣ Profil client
+🔎 A. Home Ownership vs Default
+Colonnes :
+•	home_ownership
+•	loan_status
+Insight :
+•	Les propriétaires sont-ils moins risqués que les locataires ?
+________________________________________
+🔎 B. Type d’application
+Colonnes :
+•	application_type
+Insight :
+•	Joint Application vs Individual
+•	Qui rembourse mieux ?
+________________________________________
+🔎 C. Ancienneté emploi vs risque
+Colonnes :
+•	emp_length
+•	loan_status
+Insight :
+•	Plus d’années d’emploi = moins de défaut ?
+________________________________________
+📅 4️⃣ Analyse temporelle
+🔎 A. Volume des prêts par date d’émission
+Colonnes :
+•	issue_date
+•	loan_amount
+Insight :
+•	Croissance mensuelle (MTD, PMTD, YTD)
+•	Saisonnalité
+________________________________________
+🔎 B. Retards de paiement
+Colonnes :
+•	last_payment_date
+•	next_payment_date
+•	loan_status
+Insight :
+•	Taux de retard
+•	Détection des comptes à risque
+________________________________________
+🎯 5️⃣ Analyse par Purpose (objectif du prêt)
+Colonne :
+•	purpose
+Insight :
+•	Quel type de prêt a le plus de défaut ? (debt consolidation ? credit card ?)
+•	Quel purpose génère le plus de revenus ?
 
