@@ -1,74 +1,52 @@
-# Analyser le taux de churn
+# ANALYSE SUR LES PRÊTS BANCAIRES
 
-## Contexte général 📌
+## 1. Contexte
 
-Author: Hang NGUYEN  
-Tool Used: SQL, PowerBi
+Les prêts bancaires permettent aux particuliers et entreprises d’atteindre leurs objectifs financiers. Pour une gestion efficace, il est essentiel de comprendre les conditions, coûts et responsabilités liés aux prêts.
 
-Ce jeu de données contient des informations détaillées sur les clients d’une entreprise de services de télécommunications. L’objectif principal est d’analyser le taux de churn 
-(attrition client), c’est-à-dire la proportion de clients ayant quitté l’entreprise sur une période donnée, et d’identifier les facteurs explicatifs de ce départ.
+---
 
-Chaque ligne du tableau représente un client unique, identifié par Customer_ID, et décrit son profil démographique, son niveau d’engagement, les services souscrits,
-ainsi que les aspects contractuels et financiers liés à sa relation avec l’entreprise.
+## 2. Sources de données
 
-## Description des dimensions du jeu de données 🧾
-### 1. Profil démographique et géographique: 
+* **Demandes de prêt** : Informations personnelles et financières fournies par l’emprunteur.
+* **Rapports de crédit** : Historique et solvabilité de l’emprunteur.
+* **Registres internes** : Décaissements, remboursements, statut des prêts.
+* **Portails en ligne** : Demandes et paiements effectués via les plateformes digitales.
+* **Sources externes** : Vérification des revenus ou données additionnelles.
 
-Gender, Age, Married, State
+---
 
-Ces variables permettent d’analyser si le churn varie selon l’âge, le genre, la situation familiale ou la localisation géographique.
+## 3. Processus d’octroi d’un prêt
 
-### 2. Relation client et ancienneté:
+1. **Demande** : Soumission en ligne ou en agence.
+2. **Examen** : Vérification des documents et informations.
+3. **Vérification identité** : Prévenir le vol d’identité.
+4. **Vérification crédit** : Évaluation de l’historique et du score de crédit.
+5. **Vérification revenus** : Analyse de la capacité de remboursement.
+6. **Ratio dette/revenu (DTI)** : Ratio des dettes mensuelles sur revenus mensuels.
+7. **Vérification emploi** : Stabilité de l’emploi.
+8. **Évaluation garanties** (si applicable) : Valeur et état des collatéraux.
+9. **Évaluation du risque** : Crédit, revenus et objectif du prêt.
+10. **Décision** : Approbation ou refus, définition du montant, taux et conditions.
+11. **Contrat de prêt** : Conditions détaillées et calendrier de remboursement.
+12. **Décaissement** : Fonds versés à l’emprunteur.
+13. **Remboursement** : Paiements réguliers du principal et des intérêts.
+14. **Suivi continu** : Surveillance des paiements et gestion des défauts.
 
-Tenure_in_Months : durée de la relation client
-Number_of_Referrals : nombre de recommandations effectuées
+---
 
-Ces indicateurs mesurent la fidélité et l’engagement du client, souvent fortement corrélés au churn.
+## 4. Objectifs de l’analyse des données
 
-### 3. Services souscrits
+* **Évaluation du risque** : Identifier les profils à haut risque et prévenir les défauts.
+* **Décision de prêt** : Appuyer les décisions avec des modèles basés sur les données.
+* **Gestion de portefeuille** : Suivre et optimiser les performances des prêts.
+* **Détection de fraude** : Repérer les anomalies et comportements suspects.
+* **Conformité réglementaire** : Respecter les obligations légales (ex : KYC, HMDA).
+* **Analyse client** : Comprendre le comportement et adapter les produits.
+* **Rentabilité** : Évaluer revenus d’intérêts, coûts et pertes potentielles.
+* **Études de marché** : Identifier tendances et besoins clients.
+* **Gestion du risque de crédit** : Suivi continu et provisions pour pertes.
+* **Fidélisation** : Proposer refinancement ou produits complémentaires.
 
-Services télécom : Phone_Service, Multiple_Lines, Internet_Service, Internet_Type
-Services additionnels : Online_Security, Online_Backup, Device_Protection_Plan, Premium_Support
-Divertissement et data : Streaming_TV, Streaming_Movies, Streaming_Music, Unlimited_Data
-
-Ces colonnes permettent d’identifier quels services ou combinaisons de services sont associés à un risque de churn plus élevé.
-
-### 4. Conditions contractuelles et facturation
-
-Contract : type de contrat (mensuel, annuel, etc.)
-Paperless_Billing, Payment_Method
-
-Ces variables sont clés pour comprendre l’impact des modalités contractuelles et de paiement sur la rétention client.
-
-### 5. Données financières
-
-Monthly_Charge, Total_Charges
-Total_Refunds, Total_Extra_Data_Charges, Total_Long_Distance_Charges
-Total_Revenue
-
-Elles permettent d’évaluer la relation entre valeur financière du client, coûts supplémentaires et probabilité de churn.
-
-### 6. Indicateurs de churn
-
-Customer_Status : client actif ou churné
-Churn_Category : type de churn (concurrent, prix, service, etc.)
-Churn_Reason : raison précise du départ
-
-Ces champs constituent la variable cible de l’analyse et permettent une approche à la fois quantitative (taux de churn) et qualitative (causes du churn).
-
-#### Enjeux métiers ❓:
-
-1 / Calculer le taux global de churn
-
-2 / Identifier les segments clients à fort risque
-
-3 / Comprendre les principales causes du churn
-
-4 / Déterminer les leviers d’action pour améliorer la rétention client
-
-## Etape 1 : ETL dans SQL Server Management Studio
-
-Load ficher .csv dans SQL Server: en prena&nt Customer-ID comme Clé primaire, donc Ne pas les autoriser en valeur Null. Les colonnes dont le type "bit", je les change en Varchar(50) 
-afin d'éviter les données qui dépassent le mémoire permis.
-
+---
 
