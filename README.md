@@ -82,6 +82,13 @@ Colonnes :
 •	loan_status
 Insight :
 •	Les revenus faibles ont-ils un taux de défaut plus élevé ?
+Requête SQL 
+<img width="969" height="264" alt="image" src="https://github.com/user-attachments/assets/1aca7812-1ed3-4463-93a4-a9b316e475ba" />
+
+Résultat
+<img width="632" height="114" alt="image" src="https://github.com/user-attachments/assets/e9e44540-e78c-42db-910e-c51848a98132" />
+
+
 ________________________________________
 💰 2️⃣ Performance financière
 🔎 A. Rentabilité par grade
