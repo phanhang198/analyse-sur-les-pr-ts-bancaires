@@ -116,6 +116,13 @@ Colonnes :
 •	loan_status
 Insight :
 •	Les propriétaires sont-ils moins risqués que les locataires ?
+Requête SQL
+<img width="610" height="166" alt="image" src="https://github.com/user-attachments/assets/d59e2af3-1681-4eb0-bd4c-cf796e9d7f23" />
+
+Résultat
+<img width="602" height="136" alt="image" src="https://github.com/user-attachments/assets/7da2d5d2-f7cc-4c99-a709-e9a641089e88" />
+
+
 ________________________________________
 🔎 B. Type d’application
 Colonnes :
