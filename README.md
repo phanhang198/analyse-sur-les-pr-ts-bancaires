@@ -60,11 +60,11 @@ Les prêts bancaires permettent aux particuliers et entreprises d’atteindre le
 Donc, on doit analyser le taux de défaut en fonction des éléments principaux comme le grade, le revenu, le terme du prêt et le statut de propriété.
 
 * 📊 Quick analytic :
-Quel est le taux de "Charged Off"?
-Requête SQL
+Quel est le taux de "Charged Off"?<br>
+Requête SQL<br>
 ---
-<img width="621" height="87" alt="image" src="https://github.com/user-attachments/assets/4e129921-30cc-4904-b67d-053575f09fe0" />
-Résultat
+<img width="621" height="87" alt="image" src="https://github.com/user-attachments/assets/4e129921-30cc-4904-b67d-053575f09fe0" /><br>
+Résultat<br>
 ---
 <img width="405" height="94" alt="image" src="https://github.com/user-attachments/assets/32d63830-43f6-4d7c-8993-59b9eb2669c1" />
 
