@@ -64,9 +64,12 @@ Quel est le taux de "Charged Off"?<br>
 Requête SQL<br>
 ---
 <img width="621" height="87" alt="image" src="https://github.com/user-attachments/assets/4e129921-30cc-4904-b67d-053575f09fe0" /><br>
+
 Résultat<br>
 ---
-<img width="405" height="94" alt="image" src="https://github.com/user-attachments/assets/32d63830-43f6-4d7c-8993-59b9eb2669c1" />
+<img width="405" height="94" alt="image" src="https://github.com/user-attachments/assets/32d63830-43f6-4d7c-8993-59b9eb2669c1" /><br>
+
+Donc,ici le taux de défaut est presque 14%, assez élevé dans la gestion de crédit. Notre objectif est de baisser au 8-10%.
 
 
 * 📊 1️⃣ Analyse du risque (Risk Analytics)
@@ -87,9 +90,32 @@ Résultat
 ---
 <img width="821" height="244" alt="image" src="https://github.com/user-attachments/assets/07188ae1-a262-4430-b86a-2205088369eb" />
 
-
-
 ---
+🔎 B. Défaut par revenu annuel
+Colonnes :
+•	annual_income
+•	loan_status
+Insight :
+•	Les revenus faibles ont-ils un taux de défaut plus élevé ?
+Requête SQL 
+<img width="969" height="264" alt="image" src="https://github.com/user-attachments/assets/1aca7812-1ed3-4463-93a4-a9b316e475ba" />
+
+Résultat
+<img width="632" height="114" alt="image" src="https://github.com/user-attachments/assets/e9e44540-e78c-42db-910e-c51848a98132" />
+
+🔎 C. Home Ownership vs Default
+Colonnes :
+•	home_ownership
+•	loan_status
+Insight :
+•	Les propriétaires sont-ils moins risqués que les locataires ?
+Requête SQL
+<img width="610" height="166" alt="image" src="https://github.com/user-attachments/assets/d59e2af3-1681-4eb0-bd4c-cf796e9d7f23" />
+
+Résultat
+<img width="602" height="136" alt="image" src="https://github.com/user-attachments/assets/7da2d5d2-f7cc-4c99-a709-e9a641089e88" />
+
+
 
 # 💡 3️⃣ IDEATE — Générer des solutions
 
@@ -172,17 +198,6 @@ Insight :
 •	Plus le DTI est élevé → plus le risque augmente ?
 •	Déterminer un seuil critique (ex: DTI > 35%)
 ________________________________________
-🔎 C. Défaut par revenu annuel
-Colonnes :
-•	annual_income
-•	loan_status
-Insight :
-•	Les revenus faibles ont-ils un taux de défaut plus élevé ?
-Requête SQL 
-<img width="969" height="264" alt="image" src="https://github.com/user-attachments/assets/1aca7812-1ed3-4463-93a4-a9b316e475ba" />
-
-Résultat
-<img width="632" height="114" alt="image" src="https://github.com/user-attachments/assets/e9e44540-e78c-42db-910e-c51848a98132" />
 
 
 ________________________________________
@@ -206,18 +221,6 @@ Insight :
 •	Concentration géographique du portefeuille
 ________________________________________
 🏠 3️⃣ Profil client
-🔎 A. Home Ownership vs Default
-Colonnes :
-•	home_ownership
-•	loan_status
-Insight :
-•	Les propriétaires sont-ils moins risqués que les locataires ?
-Requête SQL
-<img width="610" height="166" alt="image" src="https://github.com/user-attachments/assets/d59e2af3-1681-4eb0-bd4c-cf796e9d7f23" />
-
-Résultat
-<img width="602" height="136" alt="image" src="https://github.com/user-attachments/assets/7da2d5d2-f7cc-4c99-a709-e9a641089e88" />
-
 
 ________________________________________
 🔎 B. Type d’application
