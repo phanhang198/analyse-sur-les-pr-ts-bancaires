@@ -82,6 +82,7 @@ Insight :
 Requête SQL
 ---
 <img width="861" height="202" alt="image" src="https://github.com/user-attachments/assets/5b85b27f-e39c-4d7b-81af-5beab2baf4dc" />
+
 Résultat
 ---
 <img width="821" height="244" alt="image" src="https://github.com/user-attachments/assets/07188ae1-a262-4430-b86a-2205088369eb" />
