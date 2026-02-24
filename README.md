@@ -57,11 +57,27 @@ Les prêts bancaires permettent aux particuliers et entreprises d’atteindre le
 # 🧠 2️⃣ DEFINE — Définir le vrai problème
  “Réduire le taux de Charged Off tout en maintenant la rentabilité.”
 
-Donc on dois analyser :
+Donc, on doit analyser le taux de défaut en fonction des éléments principaux comme le grade, le revenu, le terme du prêt et le statut de propriété.
 
-* Taux de défaut par grade
-* Rentabilité par segment
-* Perte moyenne par défaut (LGD approximée)
+
+* 📊 1️⃣ Analyse du risque (Risk Analytics)
+🔎 A. Taux de défaut par grade / sub_grade
+Colonnes utilisées :
+•	grade
+•	sub_grade
+•	loan_status
+Insight :
+•	Quel grade a le plus de Charged Off ?
+•	Les sub_grades les plus risqués ?
+👉 Permet d’identifier les profils à haut risque.
+Requête SQL
+---
+<img width="861" height="202" alt="image" src="https://github.com/user-attachments/assets/5b85b27f-e39c-4d7b-81af-5beab2baf4dc" />
+Résultat
+<img width="821" height="244" alt="image" src="https://github.com/user-attachments/assets/07188ae1-a262-4430-b86a-2205088369eb" />
+
+
+
 ---
 
 # 💡 3️⃣ IDEATE — Générer des solutions
@@ -135,22 +151,6 @@ Indicateurs clés :
 
 
 Nous allons procéder l'analyse en fonction de ces 5 insights:
-📊 1️⃣ Analyse du risque (Risk Analytics)
-🔎 A. Taux de défaut par grade / sub_grade
-Colonnes utilisées :
-•	grade
-•	sub_grade
-•	loan_status
-Insight :
-•	Quel grade a le plus de Charged Off ?
-•	Les sub_grades les plus risqués ?
-👉 Permet d’identifier les profils à haut risque.
-Requête SQL
-<img width="861" height="202" alt="image" src="https://github.com/user-attachments/assets/5b85b27f-e39c-4d7b-81af-5beab2baf4dc" />
-Résultat
-<img width="821" height="244" alt="image" src="https://github.com/user-attachments/assets/07188ae1-a262-4430-b86a-2205088369eb" />
-
-
 
 ________________________________________
 🔎 B. Défaut par DTI (Debt-to-Income)
