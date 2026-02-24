@@ -78,8 +78,8 @@ Colonnes utilisées :
 Insight :
 •	Quel grade a le plus de Charged Off ?
 •	Les sub_grades les plus risqués ?
-👉 Permet d’identifier les profils à haut risque.
-Requête SQL
+👉 Permet d’identifier les profils à haut risque.  
+Requête SQL  
 ---
 <img width="861" height="202" alt="image" src="https://github.com/user-attachments/assets/5b85b27f-e39c-4d7b-81af-5beab2baf4dc" />
 
