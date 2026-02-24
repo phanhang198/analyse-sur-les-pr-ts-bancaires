@@ -35,20 +35,105 @@ Les prêts bancaires permettent aux particuliers et entreprises d’atteindre le
 
 ---
 
-## 4. Objectifs de l’analyse des données
-
-* **Évaluation du risque** : Identifier les profils à haut risque et prévenir les défauts.
-* **Décision de prêt** : Appuyer les décisions avec des modèles basés sur les données.
-* **Gestion de portefeuille** : Suivre et optimiser les performances des prêts.
-* **Détection de fraude** : Repérer les anomalies et comportements suspects.
-* **Conformité réglementaire** : Respecter les obligations légales (ex : KYC, HMDA).
-* **Analyse client** : Comprendre le comportement et adapter les produits.
-* **Rentabilité** : Évaluer revenus d’intérêts, coûts et pertes potentielles.
-* **Études de marché** : Identifier tendances et besoins clients.
-* **Gestion du risque de crédit** : Suivi continu et provisions pour pertes.
-* **Fidélisation** : Proposer refinancement ou produits complémentaires.
+## 4.Appliquer Le Design Thinking au risque crédit avec ce dataset.
 
 ---
+# 🎯 1️⃣ EMPATHIZE — Comprendre le problème réel
+
+### 👥 Les utilisateurs finaux :
+
+* Analystes crédit
+* Comité risque
+* Direction financière
+
+### ❓ Les vraies questions :
+
+* Pourquoi certains prêts deviennent **Charged Off** ?
+* Peut-on détecter le risque AVANT l’octroi ?
+* Quelles variables discriminent le plus ?
+* Où perd-on le plus d’argent ?
+---
+
+# 🧠 2️⃣ DEFINE — Définir le vrai problème
+ “Réduire le taux de Charged Off tout en maintenant la rentabilité.”
+
+Donc on dois analyser :
+
+* Taux de défaut par grade
+* Rentabilité par segment
+* Perte moyenne par défaut (LGD approximée)
+---
+
+# 💡 3️⃣ IDEATE — Générer des solutions
+
+À partir du dataset, on peut créer :
+
+### 📊 A. Segmentation Risque
+
+* Par grade                    * Par DTI bucket
+* Par revenu                   * Par durée (36 vs 60 months)
+
+Exemple d’insight possible :
+
+* Grade C + DTI > 0.30 → défaut x3
+* 60 months → plus risqué que 36 months
+
+---
+
+### 📈 B. Construire un score interne
+
+Créer un score basé sur :
+
+* DTI
+* Grade
+* Income
+* Loan_amount / income ratio
+
+Puis classer :
+
+* Low risk
+* Medium risk
+* High risk
+
+---
+
+### 💰 C. Ajuster la politique crédit
+
+Par exemple :
+
+| Segment     | Action            |
+| ----------- | ----------------- |
+| High risk   | Refus             |
+| Medium risk | Taux plus élevé   |
+| Low risk    | Validation rapide |
+
+---
+
+# 🧪 4️⃣ PROTOTYPE — Tester une solution
+
+Tu peux :
+
+* Construire un modèle logistique
+* Tester un cut-off score
+* Simuler l’impact :
+
+Exemple :
+
+> Si on refuse les scores > 6 → combien de pertes évitées ?
+> Quel impact sur le volume business ?
+
+---
+
+# 📊 5️⃣ TEST — Mesurer l’impact réel
+
+Indicateurs clés :
+
+* Default Rate
+* Expected Loss = PD × LGD × EAD
+* Profit net
+* Acceptance rate
+
+
 Nous allons procéder l'analyse en fonction de ces 5 insights:
 📊 1️⃣ Analyse du risque (Risk Analytics)
 🔎 A. Taux de défaut par grade / sub_grade
