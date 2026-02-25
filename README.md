@@ -61,6 +61,7 @@ Donc, on doit analyser le taux de défaut en fonction des éléments principaux 
 
 * 📊 Quick analytic :
 Quel est le taux de "Charged Off"?<br>
+
 Requête SQL<br>
 <img width="621" height="87" alt="image" src="https://github.com/user-attachments/assets/4e129921-30cc-4904-b67d-053575f09fe0" /><br>
 
