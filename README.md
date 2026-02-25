@@ -62,11 +62,9 @@ Donc, on doit analyser le taux de défaut en fonction des éléments principaux 
 * 📊 Quick analytic :
 Quel est le taux de "Charged Off"?<br>
 Requête SQL<br>
----
 <img width="621" height="87" alt="image" src="https://github.com/user-attachments/assets/4e129921-30cc-4904-b67d-053575f09fe0" /><br>
 
 Résultat<br>
----
 <img width="405" height="94" alt="image" src="https://github.com/user-attachments/assets/32d63830-43f6-4d7c-8993-59b9eb2669c1" /><br>
 
 Donc,ici le taux de défaut est presque 14%, assez élevé dans la gestion de crédit. Notre objectif est de baisser au 8-10%.
@@ -82,13 +80,11 @@ Insight :
 •	Quel grade a le plus de Charged Off ?
 •	Les sub_grades les plus risqués ?
 👉 Permet d’identifier les profils à haut risque.  
-Requête SQL  
----
-<img width="861" height="202" alt="image" src="https://github.com/user-attachments/assets/5b85b27f-e39c-4d7b-81af-5beab2baf4dc" />
+Requête SQL<br>  
+<img width="861" height="202" alt="image" src="https://github.com/user-attachments/assets/5b85b27f-e39c-4d7b-81af-5beab2baf4dc" /><br>
 
-Résultat
----
-<img width="821" height="244" alt="image" src="https://github.com/user-attachments/assets/07188ae1-a262-4430-b86a-2205088369eb" />
+Résultat<br>
+<img width="821" height="244" alt="image" src="https://github.com/user-attachments/assets/07188ae1-a262-4430-b86a-2205088369eb" /><br>
 
 ---
 🔎 B. Défaut par revenu annuel
@@ -97,11 +93,11 @@ Colonnes :
 •	loan_status
 Insight :
 •	Les revenus faibles ont-ils un taux de défaut plus élevé ?
-Requête SQL 
-<img width="969" height="264" alt="image" src="https://github.com/user-attachments/assets/1aca7812-1ed3-4463-93a4-a9b316e475ba" />
+Requête SQL<br> 
+<img width="969" height="264" alt="image" src="https://github.com/user-attachments/assets/1aca7812-1ed3-4463-93a4-a9b316e475ba" /><br>
 
-Résultat
-<img width="632" height="114" alt="image" src="https://github.com/user-attachments/assets/e9e44540-e78c-42db-910e-c51848a98132" />
+Résultat<br>
+<img width="632" height="114" alt="image" src="https://github.com/user-attachments/assets/e9e44540-e78c-42db-910e-c51848a98132" /><br>
 
 🔎 C. Home Ownership vs Default
 Colonnes :
@@ -109,11 +105,23 @@ Colonnes :
 •	loan_status
 Insight :
 •	Les propriétaires sont-ils moins risqués que les locataires ?
-Requête SQL
-<img width="610" height="166" alt="image" src="https://github.com/user-attachments/assets/d59e2af3-1681-4eb0-bd4c-cf796e9d7f23" />
+Requête SQL<br>
+<img width="610" height="166" alt="image" src="https://github.com/user-attachments/assets/d59e2af3-1681-4eb0-bd4c-cf796e9d7f23" /><br>
 
-Résultat
-<img width="602" height="136" alt="image" src="https://github.com/user-attachments/assets/7da2d5d2-f7cc-4c99-a709-e9a641089e88" />
+Résultat<br>
+<img width="602" height="136" alt="image" src="https://github.com/user-attachments/assets/7da2d5d2-f7cc-4c99-a709-e9a641089e88" /><br>
+
+🔎 D. Term vs Default
+Colonnes :
+• term
+•	loan_status
+Insight :
+•	Les prêts à long terme présentent un risque plus élevé que les prêts à court terme.
+Requête SQL<br>
+<img width="777" height="164" alt="image" src="https://github.com/user-attachments/assets/a71aa542-6f34-43aa-9099-2ccb77ea9f27" /><br>
+
+Résultat<br>
+<img width="958" height="87" alt="image" src="https://github.com/user-attachments/assets/6ac747e2-e950-4958-a91d-29bb770de93d" />
 
 
 
