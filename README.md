@@ -132,10 +132,10 @@ Colonnes :
 Insight :
 •	Les dti élevé présentent un risque plus élevé que les dti bas.
 Requête SQL<br>
-<img width="902" height="413" alt="image" src="https://github.com/user-attachments/assets/92d099fa-26f9-41da-be6a-dc7a37ebe950" /><br>
+<img width="717" height="457" alt="image" src="https://github.com/user-attachments/assets/3ac250e2-182e-44d2-a2ae-cd634a412848" /><br>
 
 Résultat<br>
-<img width="888" height="141" alt="image" src="https://github.com/user-attachments/assets/411561c6-9798-4294-8ce4-89a6f9e85d00" /><br>
+<img width="840" height="111" alt="image" src="https://github.com/user-attachments/assets/54758f06-3965-41af-86f3-4ac9450a9744" /><br>
 
 # 💡 3️⃣ IDEATE — Générer des solutions
 
