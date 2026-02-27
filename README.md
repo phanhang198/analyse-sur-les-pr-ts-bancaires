@@ -162,6 +162,49 @@ Créer un score basé sur :
 * Income
 * Loan_amount / income ratio
 
+Requête SQL <br>
+
+/*Scoring*/
+with scoring as (
+select id, grade, fl.annual_income, fl.home_ownership,fl.term ,dti,
+		case 
+			when grade = 'A' then 1
+			when grade = 'B' then 2
+			when grade = 'C' then 3
+			when grade = 'D' then 4
+			when grade = 'E' then 5
+			when grade = 'F' then 6
+			when grade = 'G' then 7
+		end as score_grade,
+		case 
+			when annual_income < 50000 then 4
+			when annual_income between 50000 and 100000 then 3
+			when annual_income between 100000 and 1000000 then 2
+			when annual_income > 1000000 then 1
+		end as score_income,
+		case
+			when home_ownership = 'MORTGAGE' or home_ownership = 'OWN'  then 1
+			when fl.home_ownership = 'RENT' then 2
+			when home_ownership = 'OTHER' or home_ownership = 'NONE'  then 3
+		end as score_homeowner,
+		case
+			when dti > 0.27 or dti < 0.07 then 1
+			when dti between 0.20 and 0.27 then 2
+			when dti between 0.07 and 0.13 then 3
+			when dti between 0.13 and 0.20 then 4		
+		end as score_dti		
+from finance.financial_loan fl
+		),
+seg_scoring as 
+(select *, (score_grade + score_income + score_homeowner + score_dti) as score_total from scoring)
+
+select id,grade, annual_income, home_ownership,dti,score_total,
+		case 
+			when score_total <=5 then 'Low risk -> Validation rapide'
+			when score_total between 5 and 10 then 'Medium risk -> Taux plus élevé'
+			else 'High risk -> Potential refus'
+		end		
+from seg_scoring;
 Puis classer :
 
 * Low risk
