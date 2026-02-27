@@ -141,19 +141,7 @@ Résultat<br>
 
 À partir du dataset, on peut créer :
 
-### 📊 A. Segmentation Risque
-
-* Par grade                    * Par DTI bucket
-* Par revenu                   * Par durée (36 vs 60 months)
-
-Exemple d’insight possible :
-
-* Grade C + DTI > 0.30 → défaut x3
-* 60 months → plus risqué que 36 months
-
----
-
-### 📈 B. Construire un score interne
+### 📊 A. Construire un score interne
 
 Créer un score basé sur :
 
@@ -171,7 +159,6 @@ Créer un score basé sur :
 
 ### 💰 C. Ajuster la politique crédit
 
-Par exemple :
 
 | Segment     | Action            |
 | ----------- | ----------------- |
@@ -229,20 +216,7 @@ Résultat<br>
 <img width="971" height="334" alt="image" src="https://github.com/user-attachments/assets/ed56895c-d5c5-494b-b467-41124aeed05e" /><br>
 
 
-# 🧪 4️⃣ PROTOTYPE — Tester une solution
 
-Tu peux :
-
-* Construire un modèle logistique
-* Tester un cut-off score
-* Simuler l’impact :
-
-Exemple :
-
-> Si on refuse les scores > 6 → combien de pertes évitées ?
-> Quel impact sur le volume business ?
-
----
 
 # 📊 5️⃣ TEST — Mesurer l’impact réel
 
