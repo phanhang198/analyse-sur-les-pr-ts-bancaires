@@ -161,10 +161,28 @@ Créer un score basé sur :
 * Grade
 * Income
 * Loan_amount / income ratio
+* Puis classer :
+
+* Low risk
+* Medium risk
+* High risk
+
+---
+
+### 💰 C. Ajuster la politique crédit
+
+Par exemple :
+
+| Segment     | Action            |
+| ----------- | ----------------- |
+| High risk   | Refus             |
+| Medium risk | Taux plus élevé   |
+| Low risk    | Validation rapide |
+
+---
 
 Requête SQL <br>
-
-/*Scoring*/
+```sql
 with scoring as (
 select id, grade, fl.annual_income, fl.home_ownership,fl.term ,dti,
 		case 
@@ -205,25 +223,11 @@ select id,grade, annual_income, home_ownership,dti,score_total,
 			else 'High risk -> Potential refus'
 		end		
 from seg_scoring;
-Puis classer :
+```
 
-* Low risk
-* Medium risk
-* High risk
+Résultat<br>
+<img width="971" height="334" alt="image" src="https://github.com/user-attachments/assets/ed56895c-d5c5-494b-b467-41124aeed05e" /><br>
 
----
-
-### 💰 C. Ajuster la politique crédit
-
-Par exemple :
-
-| Segment     | Action            |
-| ----------- | ----------------- |
-| High risk   | Refus             |
-| Medium risk | Taux plus élevé   |
-| Low risk    | Validation rapide |
-
----
 
 # 🧪 4️⃣ PROTOTYPE — Tester une solution
 
